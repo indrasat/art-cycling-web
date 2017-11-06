@@ -10,7 +10,7 @@
         
         $scope.$state = $state;
         
-        vm.title = $rootScope.title ? $rootScope.title + ' - ANGULAR SUMMIT' : 'ANGULAR SUMMIT';
+        vm.title = $rootScope.title ? $rootScope.title + ' - ART CYCLING' : 'ART CYCLING';
         
 
     }
