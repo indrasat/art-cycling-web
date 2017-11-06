@@ -1,0 +1,123 @@
+<div>
+    <p>In this tutorial I&#39;m going to show you how to create a &quot;Conference&quot; app using a little bit of Node, and Cosmic JS. For the sake of understanding how to consume Restful API&rsquo;s, this tutorial will show how to make simple AJAX requests
+        to the Cosmic JS API in order to retrieve, update, and delete data in our Cosmic JS buckets. Let&#39;s get started.</p>
+    <h2>TL;DR</h2>
+    <p><a href="https://github.com/kutsaniuk/cosmicapp-conference">Download the GitHub repo.</a>
+        <br><a href="http://conference.cosmicapp.co">Check out the demo.</a></p>
+    <h2>Getting Started:</h2>
+    <p>First, let&rsquo;s make a new directory to build our project in and lets also make a package.json file.</p>
+    <p>Now, in your package.json, copy and paste the code below:</p>
+    <pre>mkdir conference-app</pre><pre>conference-app$ touch package.json</pre>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/8f9c578584d20c942605569c67e25a27' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/8f9c578584d20c942605569c67e25a27" class="embedly-card"></a>
+    </div>
+
+    <p>Second, let&rsquo;s make a bower.json file.</p><pre>conference-app$ touch bower.json</pre>
+    <p>Now, in your bower.json, copy and paste the code below:</p>
+
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/5d9812bce2c659320831852d87e90ea8' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/5d9812bce2c659320831852d87e90ea8" class="embedly-card"></a>
+    </div>
+
+    <p>Config app server:</p><pre>conference-app$ touch app-server.js</pre>
+
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/541bb037ccd2d61420297365dc2b7615' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/541bb037ccd2d61420297365dc2b7615" class="embedly-card"></a>
+    </div>
+
+    <h2>What we&#39;re installing and why:</h2>
+    <ol>
+        <li>We&#39;re going to use the AngularJS framework to build Single-page application</li>
+        <li>We&#39;re installing angular-ui-router for create multi views.</li>
+        <li>We are going to use gulp for build all js and css files into one file.</li>
+    </ol>
+    <h2>Building our app:</h2>
+    <p>Now we&#39;re going to build out our file structure a bit more so that we can organize our angular modules and js files.
+        This is what our conference-app directory should look like:</p>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/cb885772bc339d454f3839af383e4a09' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/cb885772bc339d454f3839af383e4a09" class="embedly-card"></a>
+    </div>
+
+
+    <p>Now we we will set up our index.html. Copy and paste the following code into your index.html file:</p>
+
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/441d4e90ea1f5b04e2c693c23ee488f4' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/441d4e90ea1f5b04e2c693c23ee488f4" class="embedly-card"></a>
+    </div>
+
+    <p>Here, we are going to target our &quot;root&quot; view to place our angular modules in later.
+        The main.js file located in our dist directory is what our gulpfile.js file will spit out after bundling all of our angular modules.</p>
+
+      <p>  Now, set up our gulpfile.js. Copy the following code into your gulpfile.js file:</p>
+
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/c8a5acfe4d93850472b7be418c01ab58' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/c8a5acfe4d93850472b7be418c01ab58" class="embedly-card"></a>
+    </div>
+
+
+    <p>After that we can create main module. Copy and paste the following code into your main.mdl.js file:</p>
+
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/05df7c229a78f0a3aad33dd8663ecaba' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/05df7c229a78f0a3aad33dd8663ecaba" class="embedly-card"></a>
+    </div>
+
+
+
+    <p>Now we we will set up our Auth Controller. Copy and paste the following code into your auth.ctrl.js file:</p>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/5b284fd9d3e9179a357d22fe16c45c52' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/5b284fd9d3e9179a357d22fe16c45c52" class="embedly-card"></a>
+    </div>
+    <p>Create Auth Service, copy and paste the code below:</p>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/8c39c1f0309334bc28f86b495dca8b1a' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/8c39c1f0309334bc28f86b495dca8b1a" class="embedly-card"></a>
+    </div>
+    <h2>What&#39;s going on here:</h2>
+    <ol>
+        <li>We are using the ui-router for config routes.</li>
+        <li>We created Auth Service for our asynchronous calls to our Cosmic JS API.</li>
+        <li>We created Auth Controller for checking credentials.</li>
+    </ol>
+    <p>Create User Service for get and update User, copy and paste the code below:</p>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/9bd0731314bb7207ba7453336d8fb375' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/9bd0731314bb7207ba7453336d8fb375" class="embedly-card"></a>
+    </div>
+    <p>Create About Service for get, update content from Cosmic JS API, copy and paste the code below:</p>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/bdeb282ef2cf9e55b3d7b8998e4961e0' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/bdeb282ef2cf9e55b3d7b8998e4961e0" class="embedly-card"></a>
+    </div>
+    <p>Create About Controller for get and update content, copy and paste the code below:</p>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/4fa09524e9c7ab97484e0f8cd13f3731' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/4fa09524e9c7ab97484e0f8cd13f3731" class="embedly-card"></a>
+    </div>
+    <p>Create About Module, copy and paste the code below:</p>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/9af46967265ebfc3a5253aff7c7a3d7c' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/9af46967265ebfc3a5253aff7c7a3d7c" class="embedly-card"></a>
+    </div>
+    <h2>What&#39;s going on here:</h2>
+    <ol>
+        <li>We created About Service for our asynchronous calls to our Cosmic JS API. We can update, and getting content.</li>
+        <li>We created About Controller for getting content and update.</li>
+        <li>We created About Module.</li>
+    </ol>
+    <p>Create Speakers Controller for CRUD Speakers, copy and paste the code below:</p>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/fc324525c5ce226135a8c17b92cb8655' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/fc324525c5ce226135a8c17b92cb8655" class="embedly-card"></a>
+    </div>
+    <p>Create Speakers Module, copy and paste the code below:</p>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/116653129bf650a29340fc33813ac2a2' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/116653129bf650a29340fc33813ac2a2" class="embedly-card"></a>
+    </div>
+    <p>Create Speakers Service for CRUD from Cosmic JS API, copy and paste the code below:</p>
+    <div class="fr-embedly  " data-original-embed="<a href='https://gist.github.com/kutsaniuk/1e348401d785f94e57f59a862f1e3c94' class='embedly-card'></a>">
+        <a href="https://gist.github.com/kutsaniuk/1e348401d785f94e57f59a862f1e3c94" class="embedly-card"></a>
+    </div>
+    <h2>What&#39;s going on here:</h2>
+    <ol>
+        <li>We can see information about speakers.</li>
+        <li>We can CRUD speakers.</li>
+        <li>We can upload avatar to speaker.</li>
+    </ol>
+    <h2>Conclusion:</h2>
+    <p>We were able to consume the Cosmic JS API with our actions and dispatcher functions. I hope you enjoyed this tutorial as much as I did, if you have any questions <a href="https://twitter.com/cosmic_js">reach out to us on Twitter</a> and <a href="https://cosmicjs.com/community">join our community on Slack</a>.</p>
+    <br>
+</div>
