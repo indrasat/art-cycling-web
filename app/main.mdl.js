@@ -113,7 +113,7 @@
         }
 
         $rootScope.$on('$stateChangeSuccess', function (event, current, previous) {
-            $window.document.title = current.title ? current.title + ' - ANGULAR SUMMIT' : 'ANGULAR SUMMIT';
+            $window.document.title = current.title ? current.title + ' - ART CYCLING' : 'ART CYCLING';
         });
 
     }
