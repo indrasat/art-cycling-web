@@ -25,7 +25,7 @@
 
                         crAcl.setRole('ROLE_ADMIN');
                         AuthService.setCredentials(currentUser);
-                        $state.go('admin.pages');
+                        $state.go('admin.members');
                     }
                     else
                         Flash.create('danger', 'Incorrect username or password');
