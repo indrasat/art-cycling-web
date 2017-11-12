@@ -23,10 +23,32 @@
 
         </div><!-- /.navbar-header -->
 
-        <div class="collapse navbar-collapse" id="navbar-items">
+        <div class="menu-wrap">
+                <nav class="menu">
+                    <!-- NAV -->
+                    <ul class="clearfix">
+                            <li><a href="#">Home</a></li>
+                            <li>
+                                <a href="#">Movies <span class="arrow">&#9660;</span></a>
+                         
+                                <ul class="sub-menu">
+                                    <li><a href="#">In Cinemas Now</a></li>
+                                    <li><a href="#">Coming Soon</a></li>
+                                    <li><a href="#">On DVD/Blu-ray</a></li>
+                                    <li><a href="#">Showtimes &amp; Tickets</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">T.V. Shows</a></li>
+                            <li class="current-item"><a href="#">Photos</a></li>
+                            <li><a href="#">Site Help</a></li>
+                        </ul>
+                </nav>
+        </div>
+
+        <!--div class="collapse navbar-collapse" id="navbar-items">
             <ul class="nav navbar-nav navbar-right">
 
-                <!-- navigation menu -->
+                <!- navigation menu>
                 <li ui-sref-active="active"><a ui-sref="main.home">Home</a></li>
                 <li ui-sref-active="active">
                     <a ui-sref="main.about">About</a>
@@ -41,12 +63,12 @@
                 <li ui-sref-active="active"><a ui-sref="main.schedule">Acara</a></li>
                 <li ui-sref-active="active"><a ui-sref="main.schedule">News</a></li>
                 <li ui-sref-active="active"><a ui-sref="main.schedule">Kontak</a></li>
-                <!--li ui-sref-active="active"><a ui-sref="main.partner">Partner</a></li-->
+                <!-li ui-sref-active="active"><a ui-sref="main.partner">Partner</a></li>
                 <li ui-sref-active="active"><a ui-sref="auth">Login</a></li>
 
             </ul>
         </div>
-    </div><!-- /.container -->
+    </div><!- /.container -->
 </nav>
 
 <ui-view></ui-view>
