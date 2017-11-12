@@ -10,8 +10,8 @@
  
         $stateProvider
             .state('main.schedule', {
-                url: 'schedule',
-                title: 'Schedule',
+                url: 'event',
+                title: 'Event',
                 templateUrl: '../views/schedule/schedule.html',
                 controller: 'ScheduleCtrl as vm'
             });
