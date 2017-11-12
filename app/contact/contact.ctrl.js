@@ -5,7 +5,7 @@
         .module('main')
         .controller('ContactCtrl', ContactCtrl);
 
-    function ContactCtrl($stateParams, AboutService, Notification, $log, MEDIA_URL, $state) {
+    function ContactCtrl($stateParams, ContactService, Notification, $log, MEDIA_URL, $state) {
         var vm = this;
 
         init();
@@ -43,7 +43,7 @@
                 $log.error(response.data);
             }
 
-            AboutService
+            ContactService
                 .updatePages(vm.pages[index])
                 .then(success, error);
         }
