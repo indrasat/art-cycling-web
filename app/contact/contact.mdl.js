@@ -11,7 +11,7 @@
         $stateProvider
             .state('main.contact', {
                 url: 'contact',
-                templateUrl: '../views/about/about.html',
+                templateUrl: '../views/contact/contact.html',
                 controller: 'ContactCtrl as vm'
             });
     }
