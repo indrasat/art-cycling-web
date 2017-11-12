@@ -1,76 +1,24 @@
-<nav ng-class="{'navbar-solid': !$state.is('main.home'), 'site-nav': $state.is('main.home')}"
-     class="navbar navbar-fixed-top navbar-custom">
-    <div class="container">
-        <div class="navbar-header">
-
-            <!-- logo -->
-            <div class="site-branding">
-                <a class="logo" ui-sref="main.home">
-
-                    <!-- logo image  -->
-                    <img src="dist/img/logo.png" alt="Logo">
-
-                    ART CYCLING
-                </a>
-            </div>
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-items" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-        </div><!-- /.navbar-header -->
-
-        <div class="menu-wrap">
-                <nav class="menu">
-                    <!-- NAV -->
-                    <ul class="clearfix">
-                            <li><a href="#">Home</a></li>
-                            <li>
-                                <a href="#">Movies <span class="arrow">&#9660;</span></a>
-                         
-                                <ul class="sub-menu">
-                                    <li><a href="#">In Cinemas Now</a></li>
-                                    <li><a href="#">Coming Soon</a></li>
-                                    <li><a href="#">On DVD/Blu-ray</a></li>
-                                    <li><a href="#">Showtimes &amp; Tickets</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">T.V. Shows</a></li>
-                            <li class="current-item"><a href="#">Photos</a></li>
-                            <li><a href="#">Site Help</a></li>
+<div class="menu-wrap">
+        <nav class="menu">
+            <!-- NAV -->
+            <ul class="clearfix">
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">Movies <span class="arrow">&#9660;</span></a>
+                 
+                        <ul class="sub-menu">
+                            <li><a href="#">In Cinemas Now</a></li>
+                            <li><a href="#">Coming Soon</a></li>
+                            <li><a href="#">On DVD/Blu-ray</a></li>
+                            <li><a href="#">Showtimes &amp; Tickets</a></li>
                         </ul>
-                </nav>
-        </div>
-
-        <!--div class="collapse navbar-collapse" id="navbar-items">
-            <ul class="nav navbar-nav navbar-right">
-
-                <!- navigation menu>
-                <li ui-sref-active="active"><a ui-sref="main.home">Home</a></li>
-                <li ui-sref-active="active">
-                    <a ui-sref="main.about">About</a>
-                    <ul class="sub-menu">
-                            <li><a href="#">Art Cycling</a></li>
-                            <li><a href="#">Yang Seru</a></li>
-                            <li><a href="#">Persyaratan</a></li>
-                            <li><a href="#">Hadiah</a></li>
-                    </ul>
-                </li>
-                <li ui-sref-active="active"><a ui-sref="main.register">Pendaftaran</a></li>
-                <li ui-sref-active="active"><a ui-sref="main.schedule">Acara</a></li>
-                <li ui-sref-active="active"><a ui-sref="main.schedule">News</a></li>
-                <li ui-sref-active="active"><a ui-sref="main.schedule">Kontak</a></li>
-                <!-li ui-sref-active="active"><a ui-sref="main.partner">Partner</a></li>
-                <li ui-sref-active="active"><a ui-sref="auth">Login</a></li>
-
-            </ul>
-        </div>
-    </div><!- /.container -->
-</nav>
-
+                    </li>
+                    <li><a href="#">T.V. Shows</a></li>
+                    <li class="current-item"><a href="#">Photos</a></li>
+                    <li><a href="#">Site Help</a></li>
+                </ul>
+        </nav>
+</div>
 <ui-view></ui-view>
 
 <footer class="site-footer">
