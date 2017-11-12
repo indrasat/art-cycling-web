@@ -24,7 +24,7 @@
             'schedule',
             'partner',
             'register',
-            
+            'contact',
             'admin',
             
             'config'
