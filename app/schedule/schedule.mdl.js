@@ -12,7 +12,7 @@
             .state('main.schedule', {
                 url: 'event',
                 title: 'Event',
-                templateUrl: '../views/schedule/schedule.html',
+                templateUrl: '../views/event/event.html',
                 controller: 'ScheduleCtrl as vm'
             });
     }
