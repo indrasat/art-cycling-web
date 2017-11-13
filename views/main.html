@@ -1,5 +1,20 @@
 
   <ui-view></ui-view>
+  <script src="https://www.google.com/jsapi?key=AIzaSyC60ZzdjlZmLp4WBwa8BqiNya2Gu5g49_M"></script>
+  <script>
+       window.addEventListener('load',function(){
+          if(document.getElementById('map')){
+              google.load("maps", "3",{
+              callback:function(){
+                  new google.maps.Map(document.getElementById('map'), {
+                      center: new google.maps.LatLng(0,0),
+                      zoom: 3
+                  });
+              }
+              });     
+          }
+        },false);
+  </script>     
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="footer-widget-area dark">
       <div class="container">
