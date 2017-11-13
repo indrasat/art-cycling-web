@@ -129,8 +129,7 @@
   </div><!-- #content -->
 </div><!-- .site-content-contain -->
 <script type="text/javascript">
-  $(document).ready(function(){
-    // Global Google map initMap function
+  window.onload = function(){
     function initMap() {
 
       'use strict'
@@ -524,7 +523,7 @@
 
       setTimeout(init, 0);
     }
-  })
+  }
 
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC60ZzdjlZmLp4WBwa8BqiNya2Gu5g49_M&callback=initMap"></script>
