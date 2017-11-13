@@ -47,5 +47,12 @@
                 .updatePages(vm.pages[index])
                 .then(success, error);
         }
+
+        function onMapLoaded() {
+            vm.ngMap.getMap().then(function (map) {
+                self.gMap = map;
+                google.maps.event.trigger(vm.gMap, 'resize');
+            });
+        }
     }
 })();
