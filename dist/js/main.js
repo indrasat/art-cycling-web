@@ -18,7 +18,7 @@ angular.module("config", [])
             'ngRoute',
             'ngDialog',
             'ngAnimate',
-            'ngmap',
+            'ngMap',
             'cr.acl',
             'ui-notification',
             'ngFlash',
