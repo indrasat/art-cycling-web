@@ -7,15 +7,15 @@
       html = $('html'),
       istouch = "undefined" !== IS_TOUCH_DEVICE && IS_TOUCH_DEVICE ? true : false;
 
-  /* Click */
-  (function(){
-    win.map = new google.maps.Map(document.getElementById('map'), {
+  win.map = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: -34.397,
             lng: 150.644
         },
         zoom: 8
-    });
+  });
+  /* Click */
+  (function(){
     doc.on('click', '.has-loading', function(e){
 
       // replace e.preventDefault(); with proper methods based on your site functionalities
