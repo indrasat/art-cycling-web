@@ -9,7 +9,13 @@
 
   /* Click */
   (function(){
-
+    win.map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+            lat: -34.397,
+            lng: 150.644
+        },
+        zoom: 8
+    });
     doc.on('click', '.has-loading', function(e){
 
       // replace e.preventDefault(); with proper methods based on your site functionalities

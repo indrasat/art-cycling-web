@@ -29,7 +29,7 @@
                 $log.error(response.data);
             }
 
-            AboutService
+            ContactService
                 .getPages()
                 .then(success, error);
         } 
