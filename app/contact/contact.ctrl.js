@@ -2,7 +2,7 @@
     'use strict'; 
 
     angular
-        .module('main', ['ngMap'])
+        .module('main')
         .controller('ContactCtrl', ContactCtrl);
 
     function ContactCtrl($stateParams, ContactService, Notification, $log, MEDIA_URL, $state) {
