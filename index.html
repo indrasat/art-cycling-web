@@ -37,7 +37,7 @@
   </head>
   <body class="archive has-banner">
     <div id="page" class="site">
-        <div ui-view></div>
+            <ng-map center="[40.74, -74.18]"></ng-map>
     </div><!-- #page -->
     <script src="dist/js/libs/jquery-3.2.1.min.js"></script>
     <script src="dist/js/libs/masonry.pkgd.min.js"></script>
@@ -50,7 +50,7 @@
     <script src="dist/js/libs/is-touch-device.min.js"></script>
     <script src="dist/js/libs/spark.min.js"></script>
     <script src="dist/js/libs/tooltip.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC60ZzdjlZmLp4WBwa8BqiNya2Gu5g49_M"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC60ZzdjlZmLp4WBwa8BqiNya2Gu5g49_M&callback=initMap"></script>
 
     <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
