@@ -19,140 +19,25 @@
     <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="/dist/css/style.css" type="text/css" media="all"/>
 
-
+     <!-- bower:css -->
+     <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css" />
+     <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css" />
+     <link rel="stylesheet" href="bower_components/chosen/chosen.css" />
+     <link rel="stylesheet" href="bower_components/angular-ui-notification/dist/angular-ui-notification.css" />
+     <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+     <link rel="stylesheet" href="bower_components/angular-ui-switch/angular-ui-switch.css" />
+     <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
+     <link rel="stylesheet" href="bower_components/jquery.scrollbar/jquery.scrollbar.css" />
+     <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css" />
+     <link rel="stylesheet" href="bower_components/angular-flash-alert/dist/angular-flash.css" />
+     <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+     <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css" />
+     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+     <!-- endbower -->
   </head>
   <body class="archive has-banner">
     <div id="page" class="site">
-            <header id="masthead" class="site-header" role="banner">
-                    <div class="banner-copy">
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-xxl-6 push-xxl-3">
-                            <h1 class="entry-title">Contact Us</h1>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </header><!-- #masthead -->
-                  <div class="site-content-contain">
-                    <div id="content" class="site-content">
-                      <div id="primary" class="content-area">
-                        <main id="main" class="site-main" role="main">
-                          <section class="fade section section-white">
-                            <div class="container">
-                              <div class="row">
-                                <div class="col-xxl-6 offset-xxl-3">
-                                  <p class="big-text">
-                                    At Art Cycling we pride ourselves on excellent communication with our fans. We always aim to be within easy reach and want to make sure you get the answers you want quickly and easily.
-                                    <span class="dots"></span><br/>
-                                    <b>contact@artcycling.id</b>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <section class="fade section p-t-0 p-b-0">
-                            <div class="embed-responsive embed-responsive-21by9">
-                              <div id="map" class="embed-responsive-item" data-map="_map316e8b86748w2">
-                                <div class="preloader">
-                                  <svg viewBox="25 25 50 50">
-                                    <circle cx="50" cy="50" r="20"></circle>
-                                  </svg>
-                                </div>
-                                <script>
-                                  var _map316e8b86748w2 = {
-                                    location: {
-                                      lat: 40.59388,
-                                      lng: -73.9915237
-                                    },
-                                    zoom: 15,
-                                    infowindows: [
-                                      [
-                                        '<div style="padding: 2em 1em 0;">',
-                                          '<div class="panel">',
-                                            '<h3>Head office</h3>',
-                                            '<h2>',
-                                              '168 Bay<br>',
-                                              '41st Street<br>',
-                                              'Brooklyn, NY.<br>',
-                                              '(888) 888-8888',
-                                            '</h2>',
-                                          '</div>',
-                                        '</div>'
-                                      ].join('')
-                                    ]
-                                  };
-                                </script>
-                              </div><!-- [data-map] -->
-                            </div><!-- .embed-responsive -->
-                          </section>
-                          <section class="fade section section-white">
-                            <div class="container">
-                              <div class="row">
-                                <div class="col-xxl-6 offset-xxl-3">
-                                  <div class="row">
-                                    <div class="col-lg-5">
-                                      <div class="panel m-t-3 m-b-5">
-                                        <h3>Drop us a line</h3>
-                                        <h2>We love to hear from you</h2>
-                                        <p>Join Cycling club which offers you the chance to compete on a regular basis and work your way up through the race categories. Once you have reached national or international level, if your results are good enough you will automatically come onto the radar of our performance staff, who will approach you if they feel you have the potential to make it on the team.</p>
-                                        <p><a href="#">support@artcycling.id</a></p>
-                                      </div><!-- .panel -->
-                                    </div><!-- .col-* -->
-                                    <div class="col">
-                                      <div id="img6486932646">
-                                        <img
-                                        class="lazyload"
-                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-src="images/graphics/graphic-02.svg"
-                                        alt="">
-                                      </div>
-                                    </div><!-- .col-* -->
-                                  </div><!-- .row -->
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <section class="fade section section-white">
-                            <div class="container">
-                              <div class="row">
-                                <div class="col-xxl-6 offset-xxl-3">
-                                  <p ng-bind-html="vm.pages[4].content">
-                                    Founded in 2017, Cycling seeks to share the beauty of cycling and to inspire cyclists of all levels to become better and more knowledgeable riders.
-                                    <span class="dots"></span>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <section class="fade section">
-                            <div class="container">
-                              <div class="row">
-                                <div class="col-xxl-6 offset-xxl-3">
-                                  <p ng-bind-html="vm.pages[5].content">
-                                    Founded in 2017, Cycling seeks to share the beauty of cycling and to inspire cyclists of all levels to become better and more knowledgeable riders.
-                                    <span class="dots"></span>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <section class="fade section section-white">
-                            <div class="container">
-                              <div class="row">
-                                <div class="col-xxl-6 offset-xxl-3">
-                                  <p ng-bind-html="vm.pages[4].content">
-                                    Founded in 2017, Cycling seeks to share the beauty of cycling and to inspire cyclists of all levels to become better and more knowledgeable riders.
-                                    <span class="dots"></span>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                        </main><!-- #main -->
-                      </div><!-- #primary -->
-                    </div><!-- #content -->
-                  </div><!-- .site-content-contain -->
+        <div ui-view></div>
     </div><!-- #page -->
     <script src="dist/js/libs/jquery-3.2.1.min.js"></script>
     <script src="dist/js/libs/masonry.pkgd.min.js"></script>
@@ -167,10 +52,56 @@
     <script src="dist/js/libs/tooltip.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC60ZzdjlZmLp4WBwa8BqiNya2Gu5g49_M&callback=initMap"></script>
 
-    
+    <!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/cr-acl/cr-acl.js"></script>
+<script src="bower_components/chosen/chosen.jquery.js"></script>
+<script src="bower_components/angular-chosen-localytics/dist/angular-chosen.js"></script>
+<script src="bower_components/flow.js/dist/flow.js"></script>
+<script src="bower_components/ng-flow/dist/ng-flow.js"></script>
+<script src="bower_components/angular-mask/dist/ngMask.js"></script>
+<script src="bower_components/checklist-model/checklist-model.js"></script>
+<script src="bower_components/angular-ui-notification/dist/angular-ui-notification.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+<script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+<script src="bower_components/angular-ui-switch/angular-ui-switch.js"></script>
+<script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+<script src="bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
+<script src="bower_components/jquery.scrollbar/jquery.scrollbar.js"></script>
+<script src="bower_components/d3/d3.js"></script>
+<script src="bower_components/nvd3/build/nv.d3.js"></script>
+<script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+<script src="bower_components/angular-flash-alert/dist/angular-flash.js"></script>
+<script src="bower_components/rangy/rangy-core.js"></script>
+<script src="bower_components/rangy/rangy-classapplier.js"></script>
+<script src="bower_components/rangy/rangy-highlighter.js"></script>
+<script src="bower_components/rangy/rangy-selectionsaverestore.js"></script>
+<script src="bower_components/rangy/rangy-serializer.js"></script>
+<script src="bower_components/rangy/rangy-textrange.js"></script>
+<script src="bower_components/textAngular/dist/textAngular.js"></script>
+<script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+<script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="bower_components/angular-environment/dist/angular-environment.js"></script>
+<script src="bower_components/angular-sticky/dist/angular-sticky.js"></script>
+<script src="bower_components/smooth-scroll/smooth-scroll.js"></script>
+
 <!-- endbower -->
 
-    <script src="dist/js/app.js"></script>
+    <script src="dist/js/main.js"></script>
+        <script src="dist/js/app.js"></script>
   </body>
 
 </html>
