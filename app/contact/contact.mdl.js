@@ -2,7 +2,7 @@
     'use strict';
     
     angular
-        .module('contact', [])
+        .module('contact')
         .config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
