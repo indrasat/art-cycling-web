@@ -87,6 +87,7 @@
 <script src="bower_components/smooth-scroll/smooth-scroll.js"></script>
 <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
 
+
 <!-- endbower -->
 
     <script src="dist/js/main.js"></script>
@@ -103,7 +104,21 @@
     <script src="dist/js/libs/spark.min.js"></script>
     <script src="dist/js/libs/tooltip.min.js"></script>
         <script src="dist/js/app.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC60ZzdjlZmLp4WBwa8BqiNya2Gu5g49_M&callback=window.initMap"></script>     
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+             window.addEventListener('load',function(){
+                if(document.getElementById('map')){
+                    google.load("maps", "3",{
+                    callback:function(){
+                        new google.maps.Map(document.getElementById('map'), {
+                            center: new google.maps.LatLng(0,0),
+                            zoom: 3
+                        });
+                    }
+                    });     
+                }
+              },false);
+        </script>     
   </body>
 
 </html>
