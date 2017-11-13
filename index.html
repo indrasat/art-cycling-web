@@ -37,41 +37,7 @@
   </head>
   <body class="archive has-banner">
     <div id="page" class="site">
-            <section class="fade section p-t-0 p-b-0">
-                    <div class="embed-responsive embed-responsive-21by9">
-                      <div class="embed-responsive-item" data-map="_map316e8b86748w2">
-                        <div class="preloader">
-                          <svg viewBox="25 25 50 50">
-                            <circle cx="50" cy="50" r="20"></circle>
-                          </svg>
-                        </div>
-                        <script>
-                          var _map316e8b86748w2 = {
-                            location: {
-                              lat: 40.59388,
-                              lng: -73.9915237
-                            },
-                            zoom: 15,
-                            infowindows: [
-                              [
-                                '<div style="padding: 2em 1em 0;">',
-                                  '<div class="panel">',
-                                    '<h3>Head office</h3>',
-                                    '<h2>',
-                                      '168 Bay<br>',
-                                      '41st Street<br>',
-                                      'Brooklyn, NY.<br>',
-                                      '(888) 888-8888',
-                                    '</h2>',
-                                  '</div>',
-                                '</div>'
-                              ].join('')
-                            ]
-                          };
-                        </script>
-                      </div><!-- [data-map] -->
-                    </div><!-- .embed-responsive -->
-                  </section>
+        <div ui-view></div>
     </div><!-- #page -->
 
     <!-- bower:js -->
@@ -135,9 +101,7 @@
     <script src="dist/js/libs/lazysizes.min.js"></script>
     <script src="dist/js/libs/is-touch-device.min.js"></script>
     <script src="dist/js/libs/spark.min.js"></script>
-    <script src="dist/js/libs/tooltip.min.js"></script>
-        <script src="dist/js/app.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC60ZzdjlZmLp4WBwa8BqiNya2Gu5g49_M&callback=initMap"></script>     
+    <script src="dist/js/libs/tooltip.min.js"></script>     
   </body>
 
 </html>
