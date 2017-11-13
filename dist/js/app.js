@@ -506,7 +506,7 @@
 
 
 // Global Google map initMap function
-function initMap() {
+window.initMap = function() {
 
   'use strict'
 
