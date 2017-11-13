@@ -37,7 +37,7 @@
   </head>
   <body class="archive has-banner">
     <div id="page" class="site">
-            <ng-map center="[40.74, -74.18]"></ng-map>
+        <div ui-view></div>
     </div><!-- #page -->
     <script src="dist/js/libs/jquery-3.2.1.min.js"></script>
     <script src="dist/js/libs/masonry.pkgd.min.js"></script>
@@ -97,11 +97,12 @@
 <script src="bower_components/angular-sticky/dist/angular-sticky.js"></script>
 <script src="bower_components/smooth-scroll/smooth-scroll.js"></script>
 <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+
 <!-- endbower -->
 
     <script src="dist/js/main.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC60ZzdjlZmLp4WBwa8BqiNya2Gu5g49_M&callback=initMap"></script>
         <script src="dist/js/app.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC60ZzdjlZmLp4WBwa8BqiNya2Gu5g49_M&callback=initMap"></script>     
   </body>
 
 </html>
