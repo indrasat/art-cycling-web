@@ -11,7 +11,8 @@ var http = require('http').Server(app)
 // Route
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
-
+  
+  "use strict"
   /*** Send Email  */
   let transporter = nodemailer.createTransport({
     service: 'gmail',
