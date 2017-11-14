@@ -1,11 +1,9 @@
 angular.module("config", [])
-.constant("BUCKET_SLUG", "conference")
+.constant("MEDIA_URL", "https://api.cosmicjs.com/v1/undefined/media")
 .constant("URL", "https://api.cosmicjs.com/v1/")
-.constant("MEDIA_URL", "https://api.cosmicjs.com/v1/conference/media")
-.constant("READ_KEY", "PgNOjigV530fVrpsk8jCLdXCJxrsiBZNEOBWOqs9WE9qx3Ev89")
-.constant("WRITE_KEY", "UTxihLqTWQFU9Hb5lj7bFBQvQrvGlcdbvVc1guNzT9lad63Xos")
-.constant("STRIPE_KEY", "UTxihLqTWQFU9Hb5lj7bFBQvQrvGlcdbvVc1guNzT9lad63Xos");
- 
+.constant("READ_KEY", "")
+.constant("WRITE_KEY", "");
+
 (function () {
     'use strict';
     
@@ -18,7 +16,6 @@ angular.module("config", [])
             'ngRoute',
             'ngDialog',
             'ngAnimate',
-            'ngMap',
             'cr.acl',
             'ui-notification',
             'ngFlash',
@@ -33,7 +30,7 @@ angular.module("config", [])
             'schedule',
             'partner',
             'register',
-            
+            'contact',
             'admin',
             
             'config'
@@ -122,7 +119,7 @@ angular.module("config", [])
         }
 
         $rootScope.$on('$stateChangeSuccess', function (event, current, previous) {
-            $window.document.title = current.title ? current.title + ' - ANGULAR SUMMIT' : 'ANGULAR SUMMIT';
+            $window.document.title = current.title ? current.title + ' - ART CYCLING' : 'ART CYCLING';
         });
 
     }
@@ -320,7 +317,7 @@ angular.module("config", [])
 
                         crAcl.setRole('ROLE_ADMIN');
                         AuthService.setCredentials(currentUser);
-                        $state.go('admin.pages');
+                        $state.go('admin.members');
                     }
                     else
                         Flash.create('danger', 'Incorrect username or password');
@@ -409,6 +406,113 @@ angular.module("config", [])
             };
         });  
 })();  
+
+(function () {
+    'use strict'; 
+    
+    angular
+        .module('main')
+        .controller('ContactCtrl', ContactCtrl);
+
+    function ContactCtrl($stateParams, ContactService, Notification, $log, MEDIA_URL, $state) {
+        var vm = this;
+
+        init();
+
+        vm.toolbarEditor = [
+            ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'bold', 'italics', 'underline', 'justifyLeft', 'justifyCenter', 'justifyRight', 'html']
+        ];
+
+        vm.save = save;
+
+        function init() {
+            getPages();
+        }
+        
+        function getPages() {
+            function success(response) {
+                vm.pages = response.data.objects;
+            }
+
+            function error(response) {
+                $log.error(response.data);
+            }
+
+            ContactService
+                .getPages()
+                .then(success, error);
+        } 
+
+        function save(index) {
+            function success() {
+                Notification.primary('Update Page "' + vm.pages[index].title + '" success!');
+            }
+
+            function error(response) {
+                $log.error(response.data);
+            }
+
+            ContactService
+                .updatePages(vm.pages[index])
+                .then(success, error);
+        }
+
+        function onMapLoaded() {
+            vm.ngMap.getMap().then(function (map) {
+                self.gMap = map;
+                google.maps.event.trigger(vm.gMap, 'resize');
+            });
+        }
+    }
+})();
+
+(function () {
+    'use strict';
+    
+    angular
+        .module('contact', ['ngMap'])
+        .config(config);
+
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function config($stateProvider, $urlRouterProvider) {
+ 
+        $stateProvider
+            .state('main.contact', {
+                url: 'contact',
+                templateUrl: '../views/contact/contact.html',
+                controller: 'ContactCtrl as vm'
+            });
+    }
+})();
+  
+(function () {
+    'use strict';
+
+    angular
+        .module('main')
+        .service('ContactService', function ($http,
+                                          $cookieStore, 
+                                          $q, 
+                                          $rootScope,
+                                          URL, BUCKET_SLUG, READ_KEY, WRITE_KEY, MEDIA_URL) {
+            
+            $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+            this.getPages = function (params) {
+                return $http.get(URL + BUCKET_SLUG + '/object-type/pages', {
+                    params: {
+                        limit: 100,
+                        read_key: READ_KEY
+                    }
+                });
+            };
+            this.updatePages = function (page) {
+                page.write_key = WRITE_KEY;
+
+                return $http.put(URL + BUCKET_SLUG + '/edit-object', page);
+            };
+        });
+})();  
 (function () {
     'use strict'; 
 
@@ -421,7 +525,7 @@ angular.module("config", [])
         
         $scope.$state = $state;
         
-        vm.title = $rootScope.title ? $rootScope.title + ' - ANGULAR SUMMIT' : 'ANGULAR SUMMIT';
+        vm.title = $rootScope.title ? $rootScope.title + ' - ART CYCLING' : 'ART CYCLING';
         
 
     }
@@ -811,9 +915,9 @@ angular.module("config", [])
  
         $stateProvider
             .state('main.schedule', {
-                url: 'schedule',
-                title: 'Schedule',
-                templateUrl: '../views/schedule/schedule.html',
+                url: 'event',
+                title: 'Event',
+                templateUrl: '../views/event/event.html',
                 controller: 'ScheduleCtrl as vm'
             });
     }
