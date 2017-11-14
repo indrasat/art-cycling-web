@@ -8,18 +8,12 @@ app.set('port', process.env.PORT || 3000)
 app.use(express.static(__dirname))
 app.use(bodyParser.json())
 var http = require('http').Server(app)
-// Route
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-})
 
-app.get('/sendMail', (req, res) => {
   /*** Send Email  */
   let transporter = nodemailer.createTransport({
-    service:'gmail',
     host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // use SSL
+    port: 587,
+    secure: false, // use TLS
     auth: {
       user: 'gaung717@gmail.com',
       pass: '80080pitu-o'
@@ -32,16 +26,23 @@ app.get('/sendMail', (req, res) => {
     subject: 'tes',
     text: 'tes kirim dengan nodemail'
   };
-  
-  /*** Send Email  */
-  transporter.sendMail(HelperOptions, (error, info) => {
-    if (error) {
-      return console.log(error);
-    }
-    console.log("The message was sent!");
-    console.log(info);
-  });
-})
+  // Route
+  app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+  })
+
+  app.get('/sendmail', (req, res) => {  
+    /*** Send Email  */
+    transporter.sendMail(HelperOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+        res.json({yo: error});
+      }
+      console.log("The message was sent!");
+      console.log(info);
+    });
+  })
+
 
 http.listen(app.get('port'), () => {
   console.log('Conference App listening on ' + app.get('port'))
