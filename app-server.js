@@ -17,8 +17,6 @@ app.get('/sendMail', (req, res) => {
   /*** Send Email  */
   let transporter = nodemailer.createTransport({
     service: 'gmail',
-    secure: false,
-    port: 25,
     auth: {
       user: 'gaung717@gmail.com',
       pass: '80080pitu-o'
