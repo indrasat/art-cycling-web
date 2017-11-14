@@ -2,7 +2,7 @@
     'use strict';
     
     angular
-        .module('contact', ['ngMap'])
+        .module('contact', ['ngMap','nodemailer'])
         .config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];

@@ -1,37 +1,35 @@
 (function () {
     'use strict'; 
-    
-    import {nodemailer} from 'nodemailer';
-    /*** Send Email  */
-    let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      secure: false,
-      port: 25,
-      auth: {
-        user: 'gaung717@gmail.com',
-        pass: '80080pitu-o'
-      },
-      tls: {
-        rejectUnauthorized: false
-      }
-    });
-    
-    let HelperOptions = {
-      from: '"Indra" <gaung717@gmail.com>',
-      to: 'indra@neo-fusion.com',
-      subject: 'tes',
-      text: 'tes kirim dengan nodemail'
-    };
-     
-    /*** End of Send Email  */
-    
+   
     angular
         .module('main')
         .controller('ContactCtrl', ContactCtrl);
 
     function ContactCtrl($stateParams, ContactService, Notification, $log, MEDIA_URL, $state) {
         var vm = this;
-
+        /*** Send Email  */
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            secure: false,
+            port: 25,
+            auth: {
+            user: 'gaung717@gmail.com',
+            pass: '80080pitu-o'
+            },
+            tls: {
+            rejectUnauthorized: false
+            }
+        });
+        
+        let HelperOptions = {
+            from: '"Indra" <gaung717@gmail.com>',
+            to: 'indra@neo-fusion.com',
+            subject: 'tes',
+            text: 'tes kirim dengan nodemail'
+        };
+        
+        /*** End of Send Email  */
+  
         init();
 
         vm.toolbarEditor = [
