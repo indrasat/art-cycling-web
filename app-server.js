@@ -11,7 +11,9 @@ var http = require('http').Server(app)
 // Route
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
-  
+})
+
+app.get('/sendMail', (req, res) => {
   "use strict"
   /*** Send Email  */
   let transporter = nodemailer.createTransport({
@@ -26,14 +28,14 @@ app.get('/', (req, res) => {
       rejectUnauthorized: false
     }
   });
-
+  
   let HelperOptions = {
     from: '"Indra" <gaung717@gmail.com>',
     to: 'indra@neo-fusion.com',
     subject: 'tes',
     text: 'tes kirim dengan nodemail'
   };
-
+  
   /*** Send Email  */
   transporter.sendMail(HelperOptions, (error, info) => {
     if (error) {
@@ -43,6 +45,7 @@ app.get('/', (req, res) => {
     console.log(info);
   });
 })
+
 http.listen(app.get('port'), () => {
   console.log('Conference App listening on ' + app.get('port'))
 })
