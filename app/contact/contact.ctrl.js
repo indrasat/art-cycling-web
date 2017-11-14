@@ -1,7 +1,7 @@
 (function () {
     'use strict'; 
-
-    var nodemailer = require('nodemailer');
+    
+    import {nodemailer} from 'nodemailer';
     /*** Send Email  */
     let transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -42,7 +42,7 @@
 
         function init() {
             getPages();
-            
+
             /*** Send Email  */
             transporter.sendMail(HelperOptions, (error, info) => {
                 if (error) {
