@@ -22,6 +22,9 @@ app.get('/sendMail', (req, res) => {
       user: 'gaung717@gmail.com',
       pass: '80080pitu-o'
     },
+    tls: {
+      rejectUnauthorized: false
+    }
   });
   
   let HelperOptions = {
