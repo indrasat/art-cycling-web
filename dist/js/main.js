@@ -518,43 +518,6 @@ angular.module("config", [])
 
     angular
         .module('main')
-        .controller('GlobalCtrl', GlobalCtrl);
-
-    function GlobalCtrl($scope, Notification, $log, $rootScope, $state) {
-        var vm = this;
-        
-        $scope.$state = $state;
-        
-        vm.title = $rootScope.title ? $rootScope.title + ' - ART CYCLING' : 'ART CYCLING';
-        
-
-    }
-})(); 
-
-(function () {
-    'use strict';
-    
-    angular
-        .module('home', [])
-        .config(config);
-
-    config.$inject = ['$stateProvider', '$urlRouterProvider'];
-    function config($stateProvider, $urlRouterProvider) {
- 
-        $stateProvider
-            .state('main.home', {
-                url: '',
-                templateUrl: '../views/home/home.html',
-                controller: 'AboutCtrl as vm'
-            });
-    }
-})();
- 
-(function () {
-    'use strict'; 
-
-    angular
-        .module('main')
         .controller('PartnerCtrl', PartnerCtrl); 
 
     function PartnerCtrl($stateParams, PartnerService, Notification, $log, MEDIA_URL, $state) {
@@ -713,6 +676,43 @@ angular.module("config", [])
             }
         });
 })();  
+(function () {
+    'use strict'; 
+
+    angular
+        .module('main')
+        .controller('GlobalCtrl', GlobalCtrl);
+
+    function GlobalCtrl($scope, Notification, $log, $rootScope, $state) {
+        var vm = this;
+        
+        $scope.$state = $state;
+        
+        vm.title = $rootScope.title ? $rootScope.title + ' - ART CYCLING' : 'ART CYCLING';
+        
+
+    }
+})(); 
+
+(function () {
+    'use strict';
+    
+    angular
+        .module('home', [])
+        .config(config);
+
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function config($stateProvider, $urlRouterProvider) {
+ 
+        $stateProvider
+            .state('main.home', {
+                url: '',
+                templateUrl: '../views/home/home.html',
+                controller: 'AboutCtrl as vm'
+            });
+    }
+})();
+ 
 (function () {
     'use strict'; 
 

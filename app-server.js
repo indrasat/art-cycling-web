@@ -3,6 +3,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');  
 var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 var app = express();
 app.set('port', process.env.PORT || 3000)
 app.use(express.static(__dirname))
@@ -10,16 +11,13 @@ app.use(bodyParser.json())
 var http = require('http').Server(app)
 
   /*** Send Email  */
-  let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false, // use TLS
+  var transporter = nodemailer.createTransport(smtpTransport({
+    service: 'gmail',
     auth: {
-      user: 'gaung717@gmail.com',
-      pass: '80080pitu-o'
-    },
-  });
-  
+        user: 'gaung717@gmail.com', // my mail
+        pass: '80080pitu-o'
+    }
+  }));  
   let HelperOptions = {
     from: '"Indra" <gaung717@gmail.com>',
     to: 'indra@neo-fusion.com',
