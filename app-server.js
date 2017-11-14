@@ -16,15 +16,14 @@ app.get('/', (req, res) => {
 app.get('/sendMail', (req, res) => {
   /*** Send Email  */
   let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    port: 25,
+    service:'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // use SSL
     auth: {
       user: 'gaung717@gmail.com',
       pass: '80080pitu-o'
     },
-    tls: {
-      rejectUnauthorized: false
-    }
   });
   
   let HelperOptions = {
