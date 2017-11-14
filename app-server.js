@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/sendMail', (req, res) => {
-  "use strict"
   /*** Send Email  */
   let transporter = nodemailer.createTransport({
     service: 'gmail',
