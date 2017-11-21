@@ -26,7 +26,7 @@
             'register',
             'contact',
             'admin',
-            'event',   
+            
             'config'
         ])
         .config(config)
