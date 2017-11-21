@@ -18,7 +18,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background:   linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.15)); /* Standard syntax (must be last) */
+
 }
 .site-header .intro {
   color: #fff;
@@ -63,7 +64,7 @@
     <div class="banner-content">
         <div class="container">
           <div class="row">
-            <div class="col-md-4 offset-md-4" ng-bind-html="vm.pages[1].content">
+            <div class="col-md-4 offset-md-4" ng-bind-html="vm.pages[0].content">
               
                 <h2>November 2017<br></h2>
                 <h1><strong>ART CYCLING</strong><br></h1>
