@@ -32,7 +32,7 @@ angular.module("config", [])
             'register',
             'contact',
             'admin',
-            
+            'event',
             'config'
         ])
         .config(config)
@@ -491,6 +491,105 @@ angular.module("config", [])
     angular
         .module('main')
         .service('ContactService', function ($http,
+                                          $cookieStore, 
+                                          $q, 
+                                          $rootScope,
+                                          URL, BUCKET_SLUG, READ_KEY, WRITE_KEY, MEDIA_URL) {
+            
+            $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+            this.getPages = function (params) {
+                return $http.get(URL + BUCKET_SLUG + '/object-type/pages', {
+                    params: {
+                        limit: 100,
+                        read_key: READ_KEY
+                    }
+                });
+            };
+            this.updatePages = function (page) {
+                page.write_key = WRITE_KEY;
+
+                return $http.put(URL + BUCKET_SLUG + '/edit-object', page);
+            };
+        });
+})();  
+(function () {
+    'use strict'; 
+
+    angular
+        .module('main')
+        .controller('EventCtrl', EventCtrl);
+
+    function EventCtrl($stateParams, EventService, Notification, $log, MEDIA_URL, $state) {
+        var vm = this;
+
+        init();
+
+        vm.toolbarEditor = [
+            ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'bold', 'italics', 'underline', 'justifyLeft', 'justifyCenter', 'justifyRight', 'html']
+        ];
+
+        vm.save = save;
+
+        function init() {
+            getPages();
+        }
+        
+        function getPages() {
+            function success(response) {
+                vm.pages = response.data.objects;
+            }
+
+            function error(response) {
+                $log.error(response.data);
+            }
+
+            EventService
+                .getPages()
+                .then(success, error);
+        } 
+
+        function save(index) {
+            function success() {
+                Notification.primary('Update Page "' + vm.pages[index].title + '" success!');
+            }
+
+            function error(response) {
+                $log.error(response.data);
+            }
+
+            AboutService
+                .updatePages(vm.pages[index])
+                .then(success, error);
+        }
+    }
+})();
+
+(function () {
+    'use strict';
+    
+    angular
+        .module('event', [])
+        .config(config);
+
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function config($stateProvider, $urlRouterProvider) {
+ 
+        $stateProvider
+            .state('main.event', {
+                url: 'event',
+                templateUrl: '../views/event/event.html',
+                controller: 'EventCtrl as vm'
+            });
+    }
+})();
+  
+(function () {
+    'use strict';
+
+    angular
+        .module('main')
+        .service('EventService', function ($http,
                                           $cookieStore, 
                                           $q, 
                                           $rootScope,
