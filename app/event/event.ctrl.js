@@ -3,9 +3,9 @@
 
     angular
         .module('main')
-        .controller('EventCtrl', AboutCtrl);
+        .controller('EventCtrl', EventCtrl);
 
-    function EventCtrl($stateParams, AboutService, Notification, $log, MEDIA_URL, $state) {
+    function EventCtrl($stateParams, EventService, Notification, $log, MEDIA_URL, $state) {
         var vm = this;
 
         init();
@@ -29,7 +29,7 @@
                 $log.error(response.data);
             }
 
-            AboutService
+            EventService
                 .getPages()
                 .then(success, error);
         } 
