@@ -32,7 +32,7 @@ angular.module("config", [])
             'register',
             'contact',
             'admin',
-            
+            'event',
             'config'
         ])
         .config(config)
@@ -1400,6 +1400,29 @@ angular.module("config", [])
     'use strict';
     
     angular
+        .module('admin.schedules', [])
+        .config(config);
+
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function config($stateProvider, $urlRouterProvider) {
+ 
+        $stateProvider
+            .state('admin.schedules', {
+                url: 'schedules',
+                templateUrl: '../views/admin/admin.schedules.html',
+                controller: 'ScheduleCtrl as vm',
+                data: {
+                    is_granted: ['ROLE_ADMIN']
+                }
+            });
+    }
+    
+})();
+ 
+(function () {
+    'use strict';
+    
+    angular
         .module('admin.partners', [
             'admin.partners.edit',
             'admin.partners.add'
@@ -1414,29 +1437,6 @@ angular.module("config", [])
                 url: 'partners',
                 templateUrl: '../views/admin/admin.partners.html',
                 controller: 'PartnerCtrl as vm',
-                data: {
-                    is_granted: ['ROLE_ADMIN']
-                }
-            });
-    }
-    
-})();
- 
-(function () {
-    'use strict';
-    
-    angular
-        .module('admin.schedules', [])
-        .config(config);
-
-    config.$inject = ['$stateProvider', '$urlRouterProvider'];
-    function config($stateProvider, $urlRouterProvider) {
- 
-        $stateProvider
-            .state('admin.schedules', {
-                url: 'schedules',
-                templateUrl: '../views/admin/admin.schedules.html',
-                controller: 'ScheduleCtrl as vm',
                 data: {
                     is_granted: ['ROLE_ADMIN']
                 }
